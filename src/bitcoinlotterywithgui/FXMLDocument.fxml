@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bitcoinlotterywithgui.FXMLDocumentController">
+   <children>
+      <JFXButton id="btnStop" buttonType="RAISED" layoutX="359.0" layoutY="294.0" onAction="#StopSearch" prefHeight="52.0" prefWidth="97.0" style="-fx-background-color: #345687;" text="Stop" />
+      <JFXButton id="btnStart" buttonType="RAISED" layoutX="104.0" layoutY="294.0" onAction="#StartSearch" prefHeight="52.0" prefWidth="97.0" style="-fx-background-color: #345687;" text="Start" />
+      <Label id="lblAddress" fx:id="lblData" layoutX="126.0" layoutY="55.0" prefHeight="184.0" prefWidth="308.0" text="Press Start To Search:" />
+   </children>
+</AnchorPane>
