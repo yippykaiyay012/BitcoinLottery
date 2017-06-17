@@ -48,7 +48,7 @@ public class DataObject {
 
     @Override
     public String toString() {
-        return "Data:" + "\n" + "Address=" + address + "\n" + "PageNo=" + pageNo + "\n" + "Balance=" + balance ;
+        return "Data:" + "\n" + address + "\n" + "PageNo=" + pageNo + "\n" + "Balance=" + balance ;
     }
     
     

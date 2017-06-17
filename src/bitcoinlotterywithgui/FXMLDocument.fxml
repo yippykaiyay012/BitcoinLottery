@@ -2,12 +2,28 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bitcoinlotterywithgui.FXMLDocumentController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="684.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bitcoinlotterywithgui.FXMLDocumentController">
    <children>
-      <JFXButton id="btnStop" buttonType="RAISED" layoutX="359.0" layoutY="294.0" onAction="#StopSearch" prefHeight="52.0" prefWidth="97.0" style="-fx-background-color: #345687;" text="Stop" />
-      <JFXButton id="btnStart" buttonType="RAISED" layoutX="104.0" layoutY="294.0" onAction="#StartSearch" prefHeight="52.0" prefWidth="97.0" style="-fx-background-color: #345687;" text="Start" />
-      <Label id="lblAddress" fx:id="lblData" layoutX="126.0" layoutY="55.0" prefHeight="184.0" prefWidth="308.0" text="Press Start To Search:" />
+      <JFXButton id="btnStop" buttonType="RAISED" layoutX="573.0" layoutY="334.0" onAction="#StopSearch" prefHeight="52.0" prefWidth="97.0" style="-fx-background-color: #345687;" text="Stop" />
+      <JFXButton id="btnStart" buttonType="RAISED" layoutX="14.0" layoutY="334.0" onAction="#StartSearch" prefHeight="52.0" prefWidth="97.0" style="-fx-background-color: #345687;" text="Start" />
+      <Label id="lblAddress" fx:id="lblData" alignment="CENTER" contentDisplay="CENTER" layoutX="111.0" layoutY="152.0" prefHeight="234.0" prefWidth="459.0" text="Press Start To Search:" textAlignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/bitcoinGif.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="534.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/bitcoinGif.gif" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
