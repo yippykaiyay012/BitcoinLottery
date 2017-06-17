@@ -25,5 +25,10 @@
             <Image url="@../Images/bitcoinGif.gif" />
          </image>
       </ImageView>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="204.0" prefHeight="17.0" prefWidth="273.0" text="Bitcoin Lottery">
+         <font>
+            <Font size="39.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
