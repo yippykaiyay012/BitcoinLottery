@@ -7,7 +7,6 @@ package bitcoinlotterywithgui;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.List;
 import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 import javafx.concurrent.Service;
@@ -20,8 +19,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
-import javax.swing.SwingWorker;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -33,10 +32,7 @@ import org.jsoup.select.Elements;
  */
 public class FXMLDocumentController implements Initializable {
 
-//public class mainForm implements Runnable {
-//    private JPanel pnl1;
-//    private JButton btnStop;
-//    private JButton btnStart;
+
     @FXML
     private Label lblData;
 
@@ -47,57 +43,28 @@ public class FXMLDocumentController implements Initializable {
     private Button btnStop;
 
     private Service<Void> backgroundThread;
+    
+    
+    
+ 
 
-    // private JLabel label = new JLabel("Watch this space", SwingConstants.CENTER);
-//    public static void main(String[] args) {
-//        JFrame frame = new JFrame("Bitcoin Lottery");
-//
-//       // Thread thread = new Thread();
-//
-//        frame.setContentPane(new mainForm().pnl1);
-//
-//        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-//        frame.pack();
-//        frame.setVisible(true);
-//
-//    }
-//    public mainForm() {
-//        btnStart.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//
-//                new Thread(new mainForm()).start();
-//
-//                }
-//
-//        });
-//
-//
-//        btnStop.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//
-//                lblData.setText("pls");
-//
-//
-//
-//            }
-//        });
-//    }
+
+    
     @FXML
     private void StopSearch(ActionEvent event) {
 
-        // if(worker.)
+        
         backgroundThread.cancel();
        
 
-//        btnStop.setDisable(true);
-//        btnStart.setDisable(false);
+        btnStop.setDisable(true);
+        btnStart.setDisable(false);
     }
 
     @FXML
     private void StartSearch(ActionEvent event) throws IOException, InterruptedException {
-        //btnStart.setDisable(true);
+        btnStart.setDisable(true);
+        btnStop.setDisable(false);
 
         backgroundThread = new Service<Void>() {
             @Override
@@ -190,7 +157,10 @@ public class FXMLDocumentController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        //btnStop.setDisable(true);
+        btnStop.setDisable(true);
+        
+ 
+        
     }
 
 }

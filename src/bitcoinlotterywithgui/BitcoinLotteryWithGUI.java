@@ -23,6 +23,8 @@ public class BitcoinLotteryWithGUI extends Application {
         
         Scene scene = new Scene(root);
         
+        stage.setTitle("Bitcoin Lottery");
+        
         stage.setScene(scene);
         stage.show();
     }
