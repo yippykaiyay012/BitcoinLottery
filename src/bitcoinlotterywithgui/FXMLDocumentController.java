@@ -6,7 +6,10 @@
 package bitcoinlotterywithgui;
 
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.net.URL;
+import java.util.Random;
 import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 import javafx.concurrent.Service;
@@ -81,8 +84,18 @@ public class FXMLDocumentController implements Initializable {
 
                         while (!found) {
 
-                            long randomPage = (long) (Math.random() * 99999999 + 1) * (long) (Math.random() * 999999999 + 1) * (long) (Math.random() * 9 + 1);
-
+                           long randomPage = (long) (Math.random() * 99999999 + 1) * (long) (Math.random() * 999999999 + 1) * (long) (Math.random() * 9 + 1);
+                            
+//                            BigInteger rand = new BigDecimal(Math.random()).toBigInteger();
+//                            BigInteger pages = (new BigInteger("904625697166532776746648320380374280100293470930272690489102837043110636675"));
+//                            
+//                            
+//                            BigInteger randomPage = rand.multiply(pages);
+//                            
+//                            System.out.println(randomPage);
+//                            
+                            
+                            
                             String theURL = "http://directory.io/" + randomPage;
 
                             Document d = Jsoup.connect(theURL).timeout(6000).get();
@@ -113,21 +126,20 @@ public class FXMLDocumentController implements Initializable {
                                         alert.setTitle("Balance Found");
                                         alert.setHeaderText("Balance Found on page: " + randomPage + "  In address: " + addressElement);
                                         System.out.println("Balance Found on page: " + randomPage + "  In address: " + addressElement);
+                                        
+                                        alert.show();
+                                        
+                                        
                                         found = true;
                                         TimeUnit.MINUTES.sleep(99999);
                                     }
 
-                                    //displaying.........or not
-                                    //System.out.println(addressElement);
-                                    //            lblData.setText(addressElement);
-                                    //System.out.println(balanceStringLegit);
-                                    //            lblBalance.setText(balanceStringLegit);
-                                    //          System.out.println("                                        page:" + page + "     (" + randomPage + ")");
-                                    //            lblPage.setText("" + randomPage);
-                                    //publish (new DataObject(addressElement, (""+page), balanceStringRefined));
+                                  
                                 
                                     
                                     updateMessage(new DataObject(addressElement, (""+randomPage), balanceStringRefined).toString());
+                                    
+                                    
                                 }
 
                             }
@@ -151,6 +163,7 @@ public class FXMLDocumentController implements Initializable {
 
         lblData.textProperty().bind(backgroundThread.messageProperty());
         backgroundThread.start();
+       
 
     }
 
